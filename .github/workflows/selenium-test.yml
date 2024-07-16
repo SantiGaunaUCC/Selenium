@@ -25,9 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
 
-    - name: Run Selenium tests
-      run: |
-        # Iterar sobre cada script de prueba y ejecutarlo individualmente
-        for script in campo_email.py campo_nombre.py campo_phone.py; do
-          python "C:/Users/santiago.gauna/Desktop/Repo Selenium/Selenium/Fomulario/Validaciones de campos/$script"
-        done
+        - name: Run Selenium tests
+        run: |
+          python main_script.py > test_results.log
+          cat test_results.log  # Muestra el contenido del archivo de resultados
+      
