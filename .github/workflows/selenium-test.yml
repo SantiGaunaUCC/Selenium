@@ -29,5 +29,5 @@ jobs:
       run: |
         # Iterar sobre cada script de prueba y ejecutarlo individualmente
         for script in campo_email.py campo_nombre.py campo_phone.py; do
-          python "/home/runner/work/Selenium/Selenium/C/Users/santiago.gauna/Desktop/Webdriver/Fomulario/Validaciones de campos/$script"
+          python "C:/Users/santiago.gauna/Desktop/Repo Selenium/Selenium/Fomulario/Validaciones de campos/$script"
         done
