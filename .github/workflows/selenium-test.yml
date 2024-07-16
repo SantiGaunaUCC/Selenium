@@ -28,4 +28,4 @@ jobs:
     - name: Run Selenium tests
       run: |
         # Aquí va el comando para ejecutar tus pruebas Selenium
-        python Fomulario\Validaciones de campos\campo_nombre.py
+        python C:/Users/santiago.gauna/Desktop/Repo Selenium/Selenium/Fomulario/Validaciones de campos/campo_nombre.py
