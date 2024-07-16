@@ -25,8 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
 
-        - name: Run Selenium tests
-        run: |
-          python main_script.py > test_results.log
-          cat test_results.log  # Muestra el contenido del archivo de resultados
-      
+    - name: Run Selenium tests
+      run: |
+        python main_script.py > test_results.log
+        cat test_results.log  # Muestra el contenido del archivo de resultados
