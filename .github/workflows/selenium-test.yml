@@ -1,35 +1,31 @@
 name: Selenium Tests
 
-on: 
-  schedule:
-    - cron: '0 11 * * *'  # Ejecutar a las 8 a.m. hora local de Argentina (11 a.m. UTC)
-    - cron: '0 12 * * *'  # Ejecutar a las 9 a.m. hora local de Argentina (12 p.m. UTC)
-    - cron: '0 13 * * *'  # Ejecutar a las 10 a.m. hora local de Argentina (1 p.m. UTC)
-    - cron: '0 14 * * *'  # Ejecutar a las 11 a.m. hora local de Argentina (2 p.m. UTC)
-    - cron: '0 15 * * *'  # Ejecutar a las 12 p.m. hora local de Argentina (3 p.m. UTC)
-    - cron: '0 16 * * *'  # Ejecutar a la 1 p.m. hora local de Argentina (4 p.m. UTC)
-    - cron: '0 17 * * *'  # Ejecutar a las 2 p.m. hora local de Argentina (5 p.m. UTC)
-    - cron: '0 18 * * *'  # Ejecutar a las 3 p.m. hora local de Argentina (6 p.m. UTC)
-  
-
+on:
   push:
     branches:
-      - main  # También ejecuta las pruebas en cada push a la rama main
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  test:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        # with:
-        #   build: npm run build
-        #   start: npm start
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install selenium
+
+    - name: Run Selenium tests
+      run: |
+        # Aquí va el comando para ejecutar tus pruebas Selenium
+        python C:\Users\santiago.gauna\Desktop\Repo Selenium\Selenium\main_script.py
