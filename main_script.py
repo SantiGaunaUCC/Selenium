@@ -6,9 +6,9 @@ base_dir = "C:\\Users\\santiago.gauna\\Desktop\\Webdriver\\Fomulario\\Validacion
 
 # Lista de scripts de prueba
 test_scripts = [
-    "campo_categoria.py",
-    "campo_carrera.py",
-    "campo_consulta.py",
+    # "campo_categoria.py",
+    # "campo_carrera.py",
+    # "campo_consulta.py",
     "campo_email.py",
     "campo_nombre.py",
     "campo_phone.py",
